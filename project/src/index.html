@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="page__body">
+  <header class="header">
+    <div class="header-case">
+      <div class="header-wrapper">
+        <a class="header-logo" href="index.html">
+          <picture>
+            <img src="./image/logo-liga.svg" alt="Логотип ЛигаБанк">
+          </picture>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#">Услуги</a></li>
+          <li class="header__nav-item"><a href="#">Рассчитать кредит</a></li>
+          <li class="header__nav-item"><a href="#">Конвертер валют</a></li>
+          <li class="header__nav-item"><a href="#">Контакты</a></li>
+          <li class="header__nav-item"><a href="#">Задать вопрос</a></li>
+        </ul>
+      </nav>
+      <div class="header__login">
+        <a href="#" class="header__login-link">Войти в Интернет-банк</a>
+      </div>
+    </div>
+  </header>
+  <main class="page__main">
+    <h1 class="visually-hidden">Лига Банк</h1>
+    <section class="banner">
+      <h2 class="visually-hidden">Баннер Лига Банк</h2>
+      <div class="banner__description">
+        <h2 class="banner__header">Лига Банк</h2>
+        <p class="banner__text">Кредиты на любой случай</p>
+        <a class="banner__button">Рассчитать кредит</a>
+      </div>
+      <div class="banner__image-card">
+        <picture>
+          <!-- image -->
+        </picture>
+      </div>
+    </section>
+    <section class="converter">
+      <h2 class="converter__header">Конвертер валют</h2>
+      <form class="converter__form">
+        <h2 class="converter__header">Конвертер валют</h2>
+        <div class="converter__wrapper">
+          <label for="i-have" class="converter__name-input" title="i-have">У меня есть</label>
+          <input class="converter__value" type="text" id="i-have">
+          <select class="converter__list">
+            <option class="converter__item">RUB</option>
+            <option class="converter__item">USD</option>
+            <option class="converter__item">EUR</option>
+            <option class="converter__item">GBR</option>
+            <option class="converter__item">CNY</option>
+          </select>
+        </div>
+        <div class="converter__wrapper">
+          <label for="i-want-to-buy" class="converter__name-input" title="i-want-to-buy">Хочу приобрести</label>
+          <input class="converter__value" type="text" id="i-want-to-buy">
+          <select class="converter__list">
+            <option class="converter__item">USD</option>
+            <option class="converter__item">RUB</option>
+            <option class="converter__item">EUR</option>
+            <option class="converter__item">GBR</option>
+            <option class="converter__item">CNY</option>
+          </select>
+        </div>
+        <div class="converter__submit-wrapper">
+          <input class="converter__date" type="date">
+          <button class="converter__button"></button>
+        </div>
+      </form>
+    </section>
+    <section class="history">
+      <h2 class="visually-hidden">История</h2>
+      <div class="history__wrapper">
+        <h2 class="history__header">История конвертация</h2>
+        <div class="history__converter">
+          <div class="history__converter-wrapper">
+            <p class="history__converter-date">25.11.2020</p>
+            <div class="history__converter-wrapper">
+              <span class="history__converter-price-before">1000 RUB</span>
+              <span class="history__converter-price-after">13,1234 USD</span>
+            </div>
+          </div>
+        </div>
+        <button class="history__button-delete">Очистить историю</button>
+      </div>
+    </section>
+    <footer class="page-footer">
+      <section class="footer-description">
+        <h2 class="visually-hidden">Контакты Банка</h2>
+        <div class="footer-description__wrapper">
+          <div class="adress">
+            <!-- SVG -->
+            <p class="adress__text">150015, г. Москва, ул. Московская, д. 32
+              Генеральная лицензия Банка России №1050
+              Ⓒ Лига Банк, 2019</p>
+          </div>
+          <div class="services">
+            <ul class="services__list">
+              <li class="services__item">Услуги</li>
+              <li class="services__item">Рассчитать кредит</li>
+              <li class="services__item">Контакты</li>
+              <li class="services__item">Задать вопрос</li>
+            </ul>
+          </div>
+          <div class="mobile">
+            <span class="mobile__code">*0904</span>
+            <p class="mobile-description">Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
+          </div>
+          <div class="contacts">
+            <a class="contacts__mobile" href="tel:88001112233">8 800 111 22 33</a>
+            <p class="contacts__description"></p>
+          </div>
+          <div class="social">
+
+          </div>
+        </div>
+      </section>
+    </footer>
+  </main>
+  <div id="root"></div>
+  <script src="../src/bundle.js"></script>
+</body>
+</html>

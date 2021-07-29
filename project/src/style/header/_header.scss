@@ -1,0 +1,32 @@
+.header {
+  background: #F6F7FF;;
+}
+
+.header-case {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.header__nav-item {
+  margin-right: 20px;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.header__nav-item a {
+  text-decoration: none;
+  color: #1F1E25;
+}
+
+.header__nav-item a:hover {
+  color: #2C36F2;
+  ;
+}
