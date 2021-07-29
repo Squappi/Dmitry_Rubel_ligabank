@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const path = require('path');
 let mode = "development"
@@ -8,7 +9,6 @@ let target = "web";
 
 if(process.env.NODE_ENV === "production") {
   mode = "production";
-  target = "browserslist";
 }
 
 module.exports = {
@@ -25,11 +25,13 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 30 * 1024,
-          }
+        type: "asset/resource",
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: 'fonts/[hash][ext][query]',
         }
       },
       { 
@@ -40,29 +42,48 @@ module.exports = {
         }
       }, 
       {
-        test: /\.s?css$/i,
+        test: /\.css$/i,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: ""},
-          },
-          "css-loader", 
-          "postcss-loader", 
-          "sass-loader"],
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "postcss-loader",
+        ],
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "postcss-loader",
+            "resolve-url-loader",
+            "sass-loader"
+        ],
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin(), new HtmlWebpackPlugin({
-    template: "./project/src/index.html",
-  })],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./project/public/index.html",
+  }),
+  new CopyPlugin({
+    patterns: [
+          {
+            from: "image/**",
+            context: "./project/public"
+          },
+        ],
+    }),
+  ],
 
   resolve: {
     extensions: [".js", ".jsx"],
   },
 
   devServer: {
-    contentBase: "./bundle",
     hot: true,
+    writeToDisk: true
   },
   entry: './project/src/index.js',
   output: {

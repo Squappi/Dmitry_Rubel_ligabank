@@ -1,5 +1,5 @@
 .header {
-  background: #F6F7FF;;
+  background-color: #F6F7FF;;
 }
 
 .header-case {
@@ -11,6 +11,8 @@
 }
 
 .header__nav-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
 }
