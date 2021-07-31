@@ -1,5 +1,11 @@
-@use "global";
+@use "./global/global";
 @use "./header/header";
 @use "./banner/banner";
 @use "./converter/converter.scss";
 @use "./fonts/fonts.scss";
+@use "./history/history.scss";
+@use "./footer/footer.scss";
+@use "./servises/servises.scss";
+@use "./mobile/mobile.scss";
+@use "./contacts/contacts.scss";
+@use "./social/social.scss"

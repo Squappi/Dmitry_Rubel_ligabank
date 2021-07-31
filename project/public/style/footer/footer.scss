@@ -1,0 +1,24 @@
+@use "../global/global";
+
+.footer-description {
+  padding: 49px 0;
+  background-color: var(--text-button);
+}
+
+.footer-description__wrapper {
+  display: flex;
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.adress {
+  width: 253px;
+  margin-right: 80px;
+}
+
+.adress__text {
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+  color: var(--text-opacity);
+}

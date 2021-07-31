@@ -1,0 +1,23 @@
+@use "../global/global";
+
+.contacts {
+  width: 123px;
+  margin-top: 9px;
+  margin-right: 39px;
+}
+
+.contacts__mobile {
+  font-size: 16px;
+  line-height: 23px;
+  text-decoration: none;
+  color: var(--text-classic);
+  font-weight: 500;
+}
+
+.contacts__description {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--text-classic);
+  margin: 0;
+}

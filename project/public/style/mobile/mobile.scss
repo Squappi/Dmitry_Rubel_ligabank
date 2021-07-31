@@ -1,0 +1,31 @@
+@use "../global/global";
+
+.mobile {
+  width: 168px;
+  margin-top: 9px;
+  margin-right: 112px;
+}
+
+.mobile__code {
+  position: relative;
+  line-height: 23px;
+}
+
+.mobile__code::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  top: 1px;
+  left: -29px;
+  background-image: url("../../image/phone.svg");
+  background-repeat: no-repeat;
+}
+
+.mobile__description {
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+  color: var( --text-opacity);
+  margin-top: 1px;
+}

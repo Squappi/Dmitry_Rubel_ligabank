@@ -1,3 +1,75 @@
+@use "../global/global";
+
 .banner {
+  min-height: 400px;
+  background-color: var(--button-color);
+  margin-bottom: 48px;
+  background-image: url("../../image/main-image.png");
+}
+
+.banner__gradient {
+  min-height: 400px;
   background: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%);
+}
+
+.banner__wrapper {
+  position: relative;
+  max-width: 1066px;
+  margin: 0 auto;
+  min-height: 400px;
+  background-image: url("../../image/main-image.png");
+  background-repeat: no-repeat;
+}
+
+.banner__wrapper::before {
+  content: "";
+  position: absolute;
+  width: 444px;
+  height: 286px;
+  top: 62px;
+  right: 74px;
+  background-image: url("../../image/card-bank.png");
+  background-repeat: no-repeat;
+}
+
+.banner__description {
+  width: 450px;
+  padding-top: 103px;
+  margin-left: 118px;
+}
+
+.banner__header {
+  margin: 0;
+  padding: 0;
+  font-size: 54px;
+  line-height: 63px;
+  font-weight: 700;
+  color: var(--text-button);
+}
+
+.banner__text {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--text-opasity-2);
+  margin-top: 8px;
+}
+
+.banner__button {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  background-color: var(--text-button); 
+  padding: 15px 36px 17px 36px;
+  border-radius: 4px;
+  margin-top: 34px;
+}
+
+.banner__button-text {
+  color: var(--text-classic);
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
 }

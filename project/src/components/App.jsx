@@ -1,14 +1,17 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../../public/style/main.scss";
+import { AppRoute } from "../const";
 import Main from "./Main";
 
 const App = () => {
   return (
-    <>
-      <section>
-        <h1>gggggg</h1>
-        <Main/>
-      </section>
-    </>
+    <BrowserRouter>
+      <Switch>
+        <Route>
+          <Main />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

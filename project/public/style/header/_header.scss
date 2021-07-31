@@ -1,5 +1,7 @@
+@use "../global/global";
+
 .header {
-  background-color: #F6F7FF;;
+  background-color: var(--text-button);
 }
 
 .header-case {
@@ -8,22 +10,36 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 25px;
+  padding-bottom: 34px;
+}
+
+.header-logo__tagline {
+  width: 150px;
 }
 
 .header__nav-list {
   margin: 0;
   padding: 0;
+  width: 684px;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .header__nav-item {
-  margin-right: 20px;
+  margin-right: 24px;
   font-size: 16px;
   line-height: 19px;
 }
 
-.header__nav-item a {
+.header__nav-item:last-child {
+  margin-right: 0;
+}
+
+.header__nav-item a,
+.header__login-link {
   text-decoration: none;
   color: #1F1E25;
 }
@@ -31,4 +47,22 @@
 .header__nav-item a:hover {
   color: #2C36F2;
   ;
+}
+
+.header__login-link {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 210px;
+  margin-left: 10px;
+}
+
+.header__login-link::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 22px;
+  top: -3px;
+  left: 6px;
+  background-image: url("../../image/door.svg");
 }
