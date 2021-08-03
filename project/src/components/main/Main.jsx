@@ -2,11 +2,11 @@ import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getLoadHistory } from "../store/api-actions";
-import { getConverter, getConverterHistory } from "../store/selector";
-import CurrencyOptions from "./currencyOptions";
+import { getLoadHistory } from "../../store/api-actions";
+import { getConverter, getConverterHistory } from "../../store/selector";
+import CurrencyOptions from "../currencyOptions/currencyOptions.jsx";
 
-function MainComponent(props) {
+function MainComponent() {
   const history = useSelector(getConverterHistory);
   const converterList = useSelector(getConverter);
 
@@ -21,7 +21,6 @@ function MainComponent(props) {
   const day = dayjs(date).subtract(7, 'day').format('YYYY-MM-DD');
 
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     if(!leftValute || !rightValute) {

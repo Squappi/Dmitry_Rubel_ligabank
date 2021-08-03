@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "../../public/style/main.scss";
-import { AppRoute } from "../const";
-import Main from "./Main";
-import NotFound from "./not-found";
+import "../../../public/style/main.scss";
+import { AppRoute } from "../../const";
+import Main from "../main/Main"
+import NotFound from "../not-found/not-found";
 
 
 function App() {
