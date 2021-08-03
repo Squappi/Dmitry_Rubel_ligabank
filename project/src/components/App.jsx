@@ -6,7 +6,7 @@ import Main from "./Main";
 import NotFound from "./not-found";
 
 
-function App(props) {
+function App() {
   return (
     <BrowserRouter>
       <Switch>

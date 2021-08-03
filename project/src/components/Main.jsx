@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { AppRoute } from "../const";
 import { getLoadHistory } from "../store/api-actions";
 import { getConverter, getConverterHistory } from "../store/selector";
 import CurrencyOptions from "./currencyOptions";

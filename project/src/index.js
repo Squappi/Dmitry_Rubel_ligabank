@@ -13,10 +13,6 @@ if(!localStorage.getItem('history')) {
 }
 const store = createStore(rootReduser, composeWithDevTools(applyMiddleware(thunk)));
 
-document.getElementsByClassName(".converter__value").onclick = function(e){
-  document.getElementsByClassName(".converter__value").focus();
-}
-
 store.dispatch(getLoadConvers());
 
 ReactDOM.render(
