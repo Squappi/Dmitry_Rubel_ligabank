@@ -1,19 +1,21 @@
-import { ActionType } from "../const";
-import { loadConverterApi } from "./actions"
+import { loadConverterApi, loadConverterHistory } from "./actions";
 
-const url = 'http://api.exchangeratesapi.io/v1';
 
-function params(paramsObj) {
-  return new URLSearchParams({
-    access_key: '42332228bb31ee76e1e70f7ed803ecd3',
-    ...paramsObj
-  });
-}
+const url = `http://data.fixer.io/api/latest?access_key=19d3e0eabb62f4d9fc124cd5622908aa&symbols=USD,EUR,RUB,GBP,CNY`;
 
-export function getLoadConvers(options) {
+export function getLoadConvers() {
   return function(dispatch) {
-    fetch(`${url}/latest?${params(options)}`)
+    return fetch(url)
       .then(res => res.json())
       .then(data => dispatch(loadConverterApi(data)))
   }
 }
+
+export function getLoadHistory(date) {
+  return function (dispatch) {
+    return fetch(`http://data.fixer.io/api/${date}?access_key=19d3e0eabb62f4d9fc124cd5622908aa&symbols=USD,EUR,RUB,GBP,CNY`)
+      .then(res => res.json())
+      .then(data => dispatch(loadConverterHistory(data)))
+  }
+}
+

@@ -1,14 +1,19 @@
 import {createReducer} from '@reduxjs/toolkit';
-import { ActionType } from '../const';
+import { loadConverterApi, loadConverterHistory } from './actions';
+
 
 const initialState = {
   converterLoad: [],
+  converterHistory: [],
 };
 
 const converter = createReducer(initialState, (builder) => {
   builder
-    .addCase(ActionType.LOAD_API, (state, action) => {
+    .addCase(loadConverterApi, (state, action) => {
       state.converterLoad = action.payload;
+    })
+    .addCase(loadConverterHistory, (state, action) => {
+      state.converterHistory = action.payload;
     });
 });
 

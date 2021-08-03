@@ -1,7 +1,8 @@
 export const AppRoute = {
-  CONVERTER: '/converter',
+  CONVERTER: '/',
 };
 
 export const ActionType = {
   LOAD_API: "loadApi",
+  LOAD_HISTORY: "loadHistory",
 };

@@ -61,10 +61,12 @@
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  text-decoration: none;
   background-color: var(--text-button); 
   padding: 15px 36px 17px 36px;
   border-radius: 4px;
   margin-top: 34px;
+  margin-bottom: 34px;
 }
 
 .banner__button-text {

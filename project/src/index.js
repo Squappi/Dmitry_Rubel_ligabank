@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import React from "react";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReduser from "./store/root-reduser.js";
+import { getLoadConvers } from "./store/api-actions.js";
 
+if(!localStorage.getItem('history')) {
+  localStorage.setItem('history', JSON.stringify([]));
+}
 const store = createStore(rootReduser, composeWithDevTools(applyMiddleware(thunk)));
+
+document.getElementsByClassName(".converter__value").onclick = function(e){
+  document.getElementsByClassName(".converter__value").focus();
+}
+
+store.dispatch(getLoadConvers());
 
 ReactDOM.render(
   <React.StrictMode>
